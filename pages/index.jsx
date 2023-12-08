@@ -7,7 +7,6 @@ import Image from 'next/image';
 import { ArticleGrid } from '../components/grid';
 import Layout from '../components/layout';
 import styles from './index.module.css';
-import process from 'process';
 
 export default function HomepageTemplate({
 	sortedArticles,
@@ -62,9 +61,6 @@ export default function HomepageTemplate({
 export async function getServerSideProps(context) {
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
 	const { locales } = context;
-
-	process.exit(1);
-	
 	// if there is more than one language in context.locales,
 	// assume multilanguage is enabled.
 	const multiLanguage = isMultiLanguage(locales);
